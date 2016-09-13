@@ -49,7 +49,7 @@ defmodule Mix.Releases.Release do
   @spec new(atom(), String.t) :: __MODULE__.t
   @spec new(atom(), String.t, [atom()]) :: __MODULE__.t
   def new(name, version, apps \\ []) do
-    output_dir = Path.relative_to_cwd(Path.join("rel", "#{name}"))
+    output_dir = Path.relative_to_cwd(Path.join("./rel", "#{name}"))
     definition = %__MODULE__{name: name, version: version, output_dir: output_dir}
     %{definition | :applications => definition.applications ++ apps}
   end
